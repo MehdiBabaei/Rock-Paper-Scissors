@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/RockPaperScissor/style.css"">
+    <script src=" https://kit.fontawesome.com/d180e23a06.js" crossorigin="anonymous">
+    </script>
+    <script src=" /RockPaperScissor/script.js">
+    </script>
+</head>
+
+<body dir="rtl">
+
+    <div class="bg-header container">
+        <div class="child-container primary-container">
+            <div class="svg">
+                <div class="img"><img src="/RockPaperScissor/img/rock.png" />
+                    <h1>سنگ</h1>
+                </div>
+                <div class="img"><img src="/RockPaperScissor/img/paper.png" />
+                    <h1>کاغذ</h1>
+                </div>
+                <div class="img"><img src="/RockPaperScissor/img/scissors.png" />
+                    <h1>قیچی</h1>
+                </div>
+            </div>
+        </div>
+        <div class="child-container flex">
+            <div class="game">
+                <div>
+                    <button class="startGamebtn" onclick="showElement()" id="start">شروع بازی</button>
+                </div>
+                <div class="firstChoice">
+                    <h3 hidden class="title">بازی چند امتیازی باشه؟</h3>
+                    <div class="pointChoice">
+                        <button hidden class="threeScore" onclick="showGame(),threeScore()"">3</button>
+                        <button hidden class=" fiveScore" onclick="showGame(),fiveScore()">5</button>
+                    </div>
+                </div>
+                <div class="gameFlex">
+                    <div class="buttons">
+                        <button hidden onclick="startGame(),randomize(),rock()" class="rock">
+                            <img src="/RockPaperScissor/img/rock.png" />
+                        </button>
+                        <button hidden onclick=" startGame(),randomize(),paper()" class="paper">
+                            <img src="/RockPaperScissor/img/paper.png" />
+                        </button>
+                        <button hidden onclick="startGame(),randomize(),scissors()" class="scissors">
+                            <img src="/RockPaperScissor/img/scissors.png" />
+                        </button>
+                    </div>
+                    <div id="computerPlay"></div>
+                    <div id="result"></div>
+                    <div>
+                        <button hidden class="resetGamebtn" onclick="resetGane()" id="reset">باز نشانی</button>
+                    </div>
+                </div>
+            </div>
+
+            <div hidden class="showScore">
+                <table class="tbShowScore">
+                    <tr class="tableHeader">
+                        <th colspan="2">
+                            جدول امتیازات
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>امتیاز شما</td>
+                        <td>امتیاز کامپیوتر</td>
+                    </tr>
+                    <tr>
+                        <td id="yourScore">0</td>
+                        <td id="pcScore">0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="bg-content container">
+        <div class="child-container">
+            <h3>شروع</h3>
+            <p>
+                روی گزینه "شروع بازی" کلیک کنید. سپس تعداد امتیازات بازی را مشخص کرده و یکی از سه حالت
+                (سنگ،کاغذ
+                و قیچی) را انتخاب کنید تا بازی ادامه پیدا کند. </p>
+            <h3>قوانینش چیه؟</h3>
+            <p>
+                قوانینش بسیار ساده است و به احتمال زیاد از دوران بچگی آن
+                را به خاطر بیارید:
+            <ul>
+                <li>اگر سنگ را انتخاب کنید، در برابر قیچی برنده
+                    خواهید شد اما در برابر کاغذ خواهید باخت.
+                </li>
+                <li>اگر کاغذ را انتخاب کنید، در برابر سنگ برنده
+                    خواهید شد اما در برابر قیچی خواهید باخت.
+                </li>
+                <li>اگر قیچی را انتخاب کنید، در برابر کاغذ برنده
+                    خواهید شد اما در برابر سنگ خواهید باخت.
+                </li>
+            </ul>
+            </p>
+            <h3>نحوه امتیازگیری</h3>
+            <p>
+            <ul>
+                <li>این بازی میتواند سه یا پنج امتیاز داشته باشد.</li>
+                <li>با هربار انتخاب گزینه ها در صورت برنده شدن یک
+                    امتیاز دریافت خواهید کرد.</li>
+                <li>زمانی که امتیاز شما به حد نصاب برسد برنده بازی
+                    میشوید.</li>
+                <li>اگر می خواهید دوباره بازی کنید، فقط روی
+                    دکمه "باز نشانی" کلیک کنید تا دکمه "شروع بازی" برای شما نمایان شود.</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
